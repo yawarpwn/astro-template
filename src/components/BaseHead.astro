@@ -1,0 +1,22 @@
+---
+import site from "../data/site";
+
+export interface Props {
+  title?: string
+  descrption?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+const {
+  descrption = site.description,
+  image = site.image,
+  canonicalURL = new URL(Astro.request.url, Astro.site),
+} = Astro.props;
+const title = Astro.props.title ? [site.title, Astro.props.title].join(' | ') : 'Astro | Make webs more fasters' 
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
