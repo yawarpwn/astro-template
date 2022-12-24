@@ -1,10 +1,46 @@
 ---
+import type { Link } from "../types";
 
+const links: Link[] = [
+  {
+    title: "Nosotro",
+    href: "/nosotros",
+  },
+  {
+    title: "Servicios",
+    href: "/servicios",
+  },
+  {
+    title: "Contacto",
+    href: "/contacto",
+  },
+  {
+    title: "Galeria",
+    href: "/galeria",
+  },
+];
 ---
+
 <header class="bg-black text-white sticky top-0 left-0 right-0">
-  <nav>
-    <a href="/">
-      <h1>TitlePage</h1>
-    </a>
-  </nav>
+  <div class="max-w-7xl mx-auto flex items-center px-4 py-8">
+    <nav class="flex justify-between w-full">
+      <a href="/">
+        <h1>TitlePage</h1>
+      </a>
+      <div class="sm:hidden">
+        <button id="menu-btn" aria-expanded="false" class="rotate-90"
+          >|||</button
+        >
+      </div>
+      <ul class="flex flex-col sm:flex-row gap-x-8">
+        {
+          links.map(({ href, title }) => (
+            <li>
+              <a href={href}>{title}</a>
+            </li>
+          ))
+        }
+      </div>
+    </nav>
+  </div>
 </header>

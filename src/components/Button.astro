@@ -1,0 +1,42 @@
+---
+export interface Props {
+  color?: "primary" | "secondary" | "outline";
+  type?: "button" | "submit";
+  size?: "sm" | "md" | "lg" | "xl";
+  class?: string;
+  href?: string;
+}
+
+const {
+  color = "primary",
+  size = "md",
+  href,
+  class: className,
+  ...props
+} = Astro.props;
+const Component = href ? "a" : "button";
+---
+
+<Component
+  {...props}
+  class={["btn", `color-${color}`, `size-${size}`, className].join(" ")}
+>
+  <slot />
+</Component>
+<style>
+  .btn {
+    @apply border border-transparent;
+  }
+  .color-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-700;
+  }
+  .color-secondary {
+  }
+
+  .color-outline {
+  }
+
+  .size-md {
+    @apply px-4 py-2 rounded-md;
+  }
+</style>

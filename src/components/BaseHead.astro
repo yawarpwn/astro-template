@@ -1,22 +1,28 @@
 ---
 import site from "../data/site";
 import SEO from "simple-astro-seo";
+import { getImage } from "@astrojs/image";
 
 export interface Props {
   title?: string;
   description?: string;
   image?: string;
   canonicalURL?: string;
+  type?: 'website' | 'article'
 }
 const {
   description = site.description,
   image = site.image,
   canonicalURL = new URL(Astro.request.url, Astro.site),
+  type = 'website'
 } = Astro.props;
 const title = Astro.props.title
   ? [site.title, Astro.props.title].join(" | ")
   : "Astro | Make webs more fasters";
 const ensureTrailingSlash = (url: string) => url.replace(/\/$/, "") + "/";
+
+const imageResolved = await getImage({src: image})
+const imageResolvedWithDomain = new URL(imageResolved.src, Astro.site).toString()
 ---
 
 <meta charset="UTF-8" />
@@ -28,5 +34,8 @@ const ensureTrailingSlash = (url: string) => url.replace(/\/$/, "") + "/";
   {title}
   {description}
   url={ensureTrailingSlash(canonicalURL.toString())}
-  twitterHandler={site.twitterHandler}
+  twitterHandle={site.twitterHandle}
+  image={imageResolvedWithDomain}
+  siteName={site.title}
+  type={type}
 />
