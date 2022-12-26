@@ -1,46 +1,86 @@
 ---
 import type { Link } from "../types";
-
+import { Icon, Sprite } from "astro-icon";
+import site from "../data/site";
 const links: Link[] = [
   {
-    title: "Nosotro",
-    href: "/nosotros",
+    href: "/showcase",
+    text: "Showcase",
   },
   {
-    title: "Servicios",
-    href: "/servicios",
+    href: "https://docs.astro.build",
+    text: "Docs",
   },
   {
-    title: "Contacto",
-    href: "/contacto",
+    href: "/themes",
+    text: "Themes",
   },
   {
-    title: "Galeria",
-    href: "/galeria",
+    href: "/integrations",
+    text: "Integrations",
+  },
+  {
+    href: "/blog",
+    text: "Blog",
   },
 ];
+
+const socialLinks = site.socialLinks.filter((link) => !link.footerOnly);
 ---
 
-<header class="bg-black text-white sticky top-0 left-0 right-0">
-  <div class="max-w-7xl mx-auto flex items-center px-4 py-8">
-    <nav class="flex justify-between w-full">
-      <a href="/">
-        <h1>TitlePage</h1>
-      </a>
-      <div class="sm:hidden">
-        <button id="menu-btn" aria-expanded="false" class="rotate-90"
-          >|||</button
-        >
-      </div>
-      <ul class="flex flex-col sm:flex-row gap-x-8">
-        {
-          links.map(({ href, title }) => (
-            <li>
-              <a href={href}>{title}</a>
-            </li>
-          ))
-        }
+<script>
+  const header = document.querySelector("#header")!;
+  const menuBtn = document.querySelector("#menu-btn")!;
+  menuBtn.addEventListener("click", () => header.classList.toggle("open"));
+</script>
+
+<header id="header" class="fixed top-0 left-0 right-0 z-20">
+  <div class="bg-neutral-900 text-neutral-400 py-4">
+    <nav class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row flex-1 gap-y-6 justify-between">
+        <div class="flex justify-between w-full md:w-auto">
+          <a href="/">
+            <span class="font-extrabold text-2xl">Astro</span>
+            <span class="font-thin text-2xl -ml-2">Template</span>
+          </a>
+          <div class="md:hidden">
+            <button id="menu-btn" class="">
+              <Sprite pack="heroicons-outline" name="menu" size={20} />
+            </button>
+          </div>
+        </div>
+        <!-- Menu  -->
+        <div id="menu" class="flex flex-col sm:flex-row text-center gap-y-6 gap-x-4">
+          {links.map((link) => <a href={link.href}>{link.text}</a>)}
+        </div>
+        <!-- Social Mobile -->
+        <div id="social-mobile" class="flex items-center justify-center gap-x-4 sm:hidden">
+          {
+            socialLinks.map((link) => (
+              <a href={link.href}>
+                <Sprite size={20} pack={link.pack} name={link.name} />
+              </a>
+            ))
+          }
+        </div>
+        <!-- Social Desktop -->
+        <div class="hidden sm:flex items-center gap-x-6">
+          {
+            socialLinks.map((link) => (
+              <a href={link.href}>
+                <Sprite size={20} pack={link.pack} name={link.name} />
+              </a>
+            ))
+          }
+        </div>
       </div>
     </nav>
   </div>
 </header>
+<style>
+  @media (max-width: 768px) {
+    header:not(.open) :is(#menu, #social-mobile) {
+      @apply hidden;
+    }
+  }
+</style>

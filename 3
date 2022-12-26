@@ -1,0 +1,60 @@
+---
+import type { Link } from "../types";
+import { Icon, Sprite } from "astro-icon";
+import site from "../data/site";
+const links: Link[] = [
+  {
+    href: "/showcase",
+    text: "Showcase",
+  },
+  {
+    href: "https://docs.astro.build",
+    text: "Docs",
+  },
+  {
+    href: "/themes",
+    text: "Themes",
+  },
+  {
+    href: "/integrations",
+    text: "Integrations",
+  },
+  {
+    href: "/blog",
+    text: "Blog",
+  },
+];
+
+const socialLinks = site.socialLinks.filter((link) => !link.footerOnly);
+---
+
+<script>
+  const header = document.querySelector("#header")!;
+  const menuBtn = document.querySelector("#menu-btn")!;
+  menuBtn.addEventListener("click", () => header.classList.toggle("open"));
+</script>
+
+<header id="header" class="fixed top-0 left-0 right-0 z-20 h-16 bg-white">
+  <nav class="max-w-7xl mx-auto w-full h-full border flex items-center px-4">
+    <div class="flex justify-between w-full">
+      <a href="/">
+        <span class="font-extrabold text-2xl">Astro</span>
+        <span class="font-thin text-2xl -ml-2">Template</span>
+      </a>
+      <button id="menu-btn" class="sm:hidden">
+        <Sprite pack="heroicons-outline" name="menu" size={20} />
+      </button>
+    </div>
+    <div
+      id="navigation"
+      class="absolute hidden top-20 left-0 flex-col bg-white right-0 gap-y-4 gap-x-6 text-center sm:static sm:flex-row"
+    >
+      {links.map((link) => <a>{link.text}</a>)}
+    </div>
+  </nav>
+</header>
+<style>
+  header.open #navigation {
+    @apply flex;
+  }
+</style>

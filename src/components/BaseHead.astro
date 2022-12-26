@@ -14,7 +14,7 @@ const {
   description = site.description,
   image = site.image,
   canonicalURL = new URL(Astro.request.url, Astro.site),
-  type = 'website'
+  Pagetype = 'website'
 } = Astro.props;
 const title = Astro.props.title
   ? [site.title, Astro.props.title].join(" | ")
@@ -37,5 +37,5 @@ const imageResolvedWithDomain = new URL(imageResolved.src, Astro.site).toString(
   twitterHandle={site.twitterHandle}
   image={imageResolvedWithDomain}
   siteName={site.title}
-  type={type}
+  pageType={Pagetype}
 />

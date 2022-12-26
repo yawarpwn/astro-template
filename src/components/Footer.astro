@@ -1,4 +1,55 @@
-<footer>
-  footer
-  {new Date().getFullYear()}
+---
+import type { Link } from "../types";
+const links: Link[] = [
+  {
+    href: "https://docs.astro.build/en/concepts/why-astro/",
+    text: "Why Astro?",
+  },
+  {
+    href: "https://docs.astro.build/",
+    text: "Documentation",
+  },
+  {
+    href: "/blog",
+    text: "Blog",
+  },
+  {
+    href: "/press",
+    text: "Press",
+  },
+  {
+    href: "/privacy",
+    text: "Privacy Policy",
+  },
+  {
+    href: "https://astro.build/company/",
+    text: "The Astro Technology Company (We're Hiring!)",
+  },
+];
+const today = new Date();
+---
+
+<footer class="bg-neutral-900">
+  {today.getFullYear()}
+  <div class="max-w-7xl max-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+    <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
+      {
+        links.map(({ href, text }) => (
+          <div class="px-5 py-2 text-center">
+            <a
+              href={href}
+              class="text-base text-neutral-300 hover:text-neutral-100"
+            >
+              {text}
+            </a>
+          </div>
+        ))
+      }
+    </nav>
+      <div class="mt-8 flex justify-center space-x-6">
+      <span>
+        text
+      </span>
+    </div>
+  </div>
 </footer>
