@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import themes from "../data/themes.json";
+import ThemeCard from "../components/ThemeCard.astro";
+import { Image } from '@astrojs/image/components'
+---
+
+<Layout>
+  <div class="mt-16">
+  <h1>Themes</h1>
+  <ul class="grid grid-cols-4">
+    {themes.map((theme) => <ThemeCard theme={theme} />)}
+  </ul>
+      </div>
+</Layout>

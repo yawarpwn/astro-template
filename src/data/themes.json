@@ -1,0 +1,109 @@
+[
+    {
+        "title": "Astroship",
+        "description": "Astroship is a starter template for startups, marketing websites, landing pages & blogs.",
+        "fullDescription": "<h3>Modern tools</h3><p>Astroship comes preconfigured with <a href=\"https://astro.build\">Astro</a>, <a href=\"https://tailwindcss.com\">TailwindCSS</a>, and <a href=\"https://alpinejs.dev/\">Alpine.js</a> for a modern developer experience out-of-the-box.</p><h3>Responsive components</h3><p>Don’t spend hours reinventing the wheel!&nbsp; Astroship comes with all the components you need to ship your marketing site fast.</p><ul><li>Responsive navigation bar with dropdown menus</li><li>Features section with icons</li><li>Price comparison cards</li><li>Contact form</li></ul><h3>Page layouts</h3><p>We have created a set of pre-built pages so you start with a fully functional site.</p><ul><li>Home page with hero section</li><li>Pricing page</li><li>About page highlighting your team</li><li>Blog pages</li><li>Contact page preconfigured for <a href=\"https://web3forms.com/\">Web3Forms</a></li></ul>",
+        "image": {
+            "src": "./images/astroship-hero.png",
+            "alt": "Astroship is a starter template for startups, marketing websites, landing pages & blogs."
+        },
+        "images": [
+            {
+                "src": "./images/astroship.png",
+                "alt": "Astroship is a starter template for startups, marketing websites, landing pages & blogs."
+            },
+            {
+                "src": "./images/astroship-2.png",
+                "alt": "Astroship is a starter template for startups, marketing websites, landing pages & blogs."
+            },
+            {
+                "src": "./images/astroship-3.png",
+                "alt": "Astroship is a starter template for startups, marketing websites, landing pages & blogs."
+            }
+        ],
+        "repoUrl": {
+            "href": "https://github.com/surjithctly/astroship",
+            "text": "Astroship"
+        },
+        "demoUrl": {
+            "href": "https://astroship.web3templates.com/",
+            "text": "Astroship"
+        },
+        "categories": [
+            "landing-page"
+        ],
+        "links": [
+            {
+                "text": "Learn More",
+                "href": "https://web3templates.com/templates/astroship-starter-website-template-for-astro"
+            },
+            {
+                "text": "Documentation",
+                "href": "https://docs.web3templates.com/"
+            },
+            {
+                "text": "Twitter",
+                "href": "https://twitter.com/surjithctly"
+            }
+        ],
+        "tags": [
+            "tailwind",
+            "alpinejs"
+        ],
+        "featured": 2,
+        "slug": "astroship",
+        "stars": 183,
+        "author": {
+            "text": "surjithctly",
+            "href": "https://github.com/surjithctly",
+            "avatar": "https://avatars.githubusercontent.com/u/1884712?v=4"
+        }
+    },
+    {
+        "title": "AstroPaper",
+        "description": "A minimal, responsive and SEO-friendly Astro blog theme.",
+        "fullDescription": "<p>AstroPaper is crafted with best practices and accessibility in mind. If you want a blog with clean design, fully responsiveness, good accessibility (keyboard/VoiceOver navigation, proper landmarks etc), and fast performance, then AstroPaper is for you.</p><h2>Highly Customizable</h2><p>AstroPaper is highly customizable - from color schemes, social links to meta tags for SEO. You can customize AstroPaper according to your taste and requirements.</p><h2>Features</h2><ul><li>Build with TypeScript</li><li>Fuzzy search with React &amp; <a href=\"https://fusejs.io/\" rel=\"noopener noreferrer\" target=\"_blank\">FuseJS</a></li><li>Accessible out of the box</li><li>SEO-friendly</li><li>Light &amp; Dark mode support</li><li>Includes draft posts &amp; pagination</li><li>Provides Sitemap &amp; RSS feed</li></ul>",
+        "image": {
+            "src": "./images/astro-paper-hero.png",
+            "alt": "A minimal, responsive and SEO-friendly Astro blog theme."
+        },
+        "images": [
+            {
+                "src": "./images/astro-paper.jpg",
+                "alt": "A minimal, responsive and SEO-friendly Astro blog theme."
+            },
+            {
+                "src": "./images/astro-paper-2.jpg",
+                "alt": "A minimal, responsive and SEO-friendly Astro blog theme."
+            },
+            {
+                "src": "./images/astro-paper-3.jpg",
+                "alt": "A minimal, responsive and SEO-friendly Astro blog theme."
+            }
+        ],
+        "repoUrl": {
+            "href": "https://github.com/satnaing/astro-paper",
+            "text": "AstroPaper"
+        },
+        "demoUrl": {
+            "href": "https://astro-paper.pages.dev/",
+            "text": "AstroPaper"
+        },
+        "tags": [
+            "tailwind",
+            "react",
+            "typescript"
+        ],
+        "categories": [
+            "blog"
+        ],
+        "featured": 1,
+        "slug": "astro-paper",
+        "stars": 145,
+        "author": {
+            "text": "satnaing",
+            "href": "https://github.com/satnaing",
+            "avatar": "https://avatars.githubusercontent.com/u/53733092?v=4"
+        }
+    }
+]

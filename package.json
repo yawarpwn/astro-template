@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "astro-icon": "^0.8.0",
+    "clsx": "^1.2.1",
+    "sharp": "^0.31.3",
     "simple-astro-seo": "^0.1.3"
   }
 }
